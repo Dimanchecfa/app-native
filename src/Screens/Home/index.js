@@ -22,9 +22,9 @@ import React from 'react';
 
 const Home = () => {
     return <Center w="100%">
-        <Box safeArea p="1" py="20" w="90%" maxW="290">
-          <Heading size="lg" p= "1" fontWeight="600" color="coolGray.800" _dark={{
-          color: "warmGray.50" 
+        <Box safeArea p="2" py="8" w="90%" maxW="290">
+          <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
+          color: "warmGray.50"
         }}>
             Welcome
           </Heading>
@@ -34,7 +34,7 @@ const Home = () => {
             Sign in to continue!
           </Heading>
   
-          <VStack space={3} mt="2">
+          <VStack space={3} mt="5">
             <FormControl>
               <FormControl.Label>Email ID</FormControl.Label>
               <Input />
@@ -46,7 +46,7 @@ const Home = () => {
               fontSize: "xs",
               fontWeight: "500",
               color: "indigo.500"
-            }} alignSelf="flex-start" mt="1">
+            }} alignSelf="flex-end" mt="1">
                 Forget Password?
               </Link>
             </FormControl>
