@@ -2,8 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import Home from "../Screens/Home";
 import Detail from "../Screens/Details";
-//import ionicons
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import fontAwesome from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-ionicons";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,15 +14,17 @@ const RootStack = () => {
         tabBarIcon: ({focused, color, size}) => {
             let iconName;
             if(route.name === 'Home') {
-                iconName = 'settings';
+                iconName =  'home';
             }
             else if(route.name === 'Details') {
                 iconName = 'settings';
             }
-            return <Ionicons name={iconName} size={20} />
+            return <Icon  name={iconName} size={size} color={color} />;
     }}}>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Detail" component={Detail} />
+        <Tab.Screen name="Settings" component={Detail} />
+        
     </Tab.Navigator>
     
   );
