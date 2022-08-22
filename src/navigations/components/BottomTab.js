@@ -49,10 +49,15 @@ const BottomTab = () => {
       }}  
       
       />
-      <Tab.Screen name="Premium" component={Premium}  options={{
+      <Tab.Screen name="Premium"
+       component={Premium}  
+       options={{
         title: "Premuim",
         headerTitleAlign: "center",
-      }}   />
+      }}
+     
+      
+      />
       <Tab.Screen name="Profile" component={Profile}  options={{
         title: "Profile",
         headerTitleAlign: "center",
