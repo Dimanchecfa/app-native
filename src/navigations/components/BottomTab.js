@@ -30,20 +30,33 @@ const BottomTab = () => {
           );
         },
       })}
-      
     >
-      <Tab.Screen 
-      name="Home" 
-      component={Home} 
-      options={{
-        title : "Home",
-        headerTitleAlign : "center",
-      }}
-       />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: "Home",
+          headerTitleAlign: "center",
+        }}
+      />
 
-      <Tab.Screen name="Free" component={Free} />
-      <Tab.Screen name="Premium" component={Premium} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen 
+      name="Free" 
+      component={Free}
+      options={{
+        title: "Free",
+        headerTitleAlign: "center",
+      }}  
+      
+      />
+      <Tab.Screen name="Premium" component={Premium}  options={{
+        title: "Premuim",
+        headerTitleAlign: "center",
+      }}   />
+      <Tab.Screen name="Profile" component={Profile}  options={{
+        title: "Profile",
+        headerTitleAlign: "center",
+      }}   />
     </Tab.Navigator>
   );
 };

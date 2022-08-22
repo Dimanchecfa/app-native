@@ -6,7 +6,7 @@ import { View, Text } from 'react-native'
 
 const  Tab = createMaterialTopTabNavigator();
 
-const TopTab = (route) => {
+const TopTab = () => {
     return (
         <Tab.Navigator>
             <Tab.Screen name="Today" component={Today} />

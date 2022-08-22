@@ -13,7 +13,6 @@ const App = () => {
          
           <BottomTab  />
       </NavigationContainer>
-
     </NativeBaseProvider>
    
   );

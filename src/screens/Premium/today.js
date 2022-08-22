@@ -1,7 +1,11 @@
+import { Text, View } from "native-base";
+
 const Today = () => {
   return (
     <View>
-      <Text>Today</Text>
+      <Text>Premuim Today</Text>
     </View>
   );
 };
+
+export default Today;
