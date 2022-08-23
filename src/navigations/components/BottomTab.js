@@ -12,6 +12,7 @@ const Tab = createBottomTabNavigator();
 const BottomTab = () => {
   return (
     <Tab.Navigator
+    initialRouteName="Free"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -41,6 +42,7 @@ const BottomTab = () => {
       />
 
       <Tab.Screen 
+
       name="Free" 
       component={Free}
       options={{

@@ -1,42 +1,48 @@
+import { Divider, HStack, Stack, VStack, Wrap } from "native-base";
 import { Text, View } from "react-native";
-import { Avatar, Card, IconButton } from 'react-native-paper';
+import { Avatar, Card, IconButton } from "react-native-paper";
 
 const Today = () => {
   return (
-    <View style={{ 
-      flex: 1,
-      height: '100%',
+    <View className="w-full h-full">
       
-      
-
-      
-    }}   >
-      <Card 
-      style={{
-        flex: 1,
-        heigh: 1
-      }}
-      >
-        
-        <Card.Content>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <View style={{ flexDirection: 'row', align2Items: 'center' }}>
-             
-              <Text>
-                <Text className="text-bold"  >John Doe</Text>
-                <Text className="flex-1  text-sm items-center justify-center bg-white" >
-                  {"\n"}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  
-                </Text>
+        <Stack style={{ flexDirection: "row"  , flex:"wrap" , height: 120  ,padding:3, margin: 7, borderRadius: 10, }}>
+          <HStack style={{  width: '75%' , height: '100%' , backgroundColor: 'gray' ,borderRadius: 10}}>
+            <Avatar.Image size={40} source={{ uri: "https://picsum.photos/200" }} style={{ marginLeft : 10 , marginTop:20}}  />
+            <VStack style={{ flexDirection: "column" , width: '100%' , height: '100%' , backgroundColor: 'gray' ,borderRadius: 10}}>
+              <Text style={{ fontSize: 15 , marginLeft: 10, marginTop: 5 , fontWeight:'bold' }}>
+                Premiere League
               </Text>
-            </View>
+              <Text style={{ fontSize: 15 , marginLeft: 10 , marginTop: 7 }}>
+               Liverpool
+              </Text>
+              <Text style={{ fontSize: 15 , marginLeft: 10 , marginTop: 5 }}>
+                Manchester United
+              </Text>
+              <Divider style={{ marginLeft: 10 , marginTop: 10 }} />
+              
+            </VStack>
             
-          </View>
-        </Card.Content>
-      </Card>
-    </View>
+            
+            </HStack>
+          
 
+          <HStack style={{ flexDirection: "row" , width: '25%' , height: '100%' , backgroundColor: 'blue'}}>
+            <IconButton icon="message-text" size={30} />
+   
+          </HStack>
+          
+
+          
+          
+      </Stack>
+        
+        
+
+      
+    </View>
   );
 };
+
+
 export default Today;
