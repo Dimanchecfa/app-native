@@ -6,13 +6,19 @@ import Profile from "../../screens/Profile";
 import Free from "../../screens/Free/index";
 import { View, Text } from "react-native";
 import Premium from "../../screens/Premium";
+import { useNavigation } from "@react-navigation/native";
+import ProfileDetail from "../../screens/Profile/ProfileDetail";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TouchableRipple } from "react-native-paper";
+
 
 const Tab = createBottomTabNavigator();
+const ProfileStack = createNativeStackNavigator();
 
-const BottomTab = () => {
+const BottomTab = ( {navigation}) => {
   return (
     <Tab.Navigator
-    initialRouteName="Free"
+      initialRouteName="Profile"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -41,31 +47,77 @@ const BottomTab = () => {
         }}
       />
 
-      <Tab.Screen 
+      <Tab.Screen
+        name="Free"
+        component={Free}
+        options={{
+          title: "Free",
+          headerTitleAlign: "center",
+        }}
+      />
+      <Tab.Screen
+        name="Premium"
+        component={Premium}
+        options={{
+          title: "Premuim",
+          headerTitleAlign: "center",
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileStackScreen}
+        options={{
+          headerShown: false,
+        }}
 
-      name="Free" 
-      component={Free}
-      options={{
-        title: "Free",
-        headerTitleAlign: "center",
-      }}  
-      
+          
+           
       />
-      <Tab.Screen name="Premium"
-       component={Premium}  
-       options={{
-        title: "Premuim",
-        headerTitleAlign: "center",
-      }}
-     
-      
-      />
-      <Tab.Screen name="Profile" component={Profile}  options={{
-        title: "Profile",
-        headerTitleAlign: "center",
-      }}   />
     </Tab.Navigator>
   );
 };
 
 export default BottomTab;
+
+
+const ProfileStackScreen = ({navigation}) => {
+  return (
+    <ProfileStack.Navigator
+    initialRouteName="Profile"
+    >
+      <ProfileStack.Screen
+        name="Profile"
+        component={Profile}
+        options={{ 
+          title: "Profile",
+          headerTitleAlign: "center",
+          headerRight: () => (
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons.Button  
+                name="account-edit"
+                size={24}
+                color="#000"
+                backgroundColor="#fff"
+                onPress={() => navigation.navigate("Detail")}
+              />
+              </View>
+            ),
+        }}
+       
+      />
+      <ProfileStack.Screen
+
+        name="Detail"
+        component={ProfileDetail}
+        options={{
+          title: "Detail",
+          headerTitleAlign: "center",
+        }}
+      />
+   
+
+    </ProfileStack.Navigator>
+  );
+}
+
+

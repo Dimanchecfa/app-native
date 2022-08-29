@@ -1,5 +1,5 @@
 import { Text, View } from "native-base"
-import TopTab from "../../navigations/components/TopTab";
+import TopTab from "../../navigations/components/DetailStack";
 
 
 const Home = () => {

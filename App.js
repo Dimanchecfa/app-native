@@ -7,15 +7,15 @@ import BottomTab from "./src/navigations/components/BottomTab";
 
 const App = () => {
   return (
-    <TailwindProvider>
+    
 
       <NativeBaseProvider>
       <NavigationContainer>
          
           <BottomTab  />
       </NavigationContainer>
-    </NativeBaseProvider>f
-    </TailwindProvider>
+    </NativeBaseProvider>
+   
     
    
   );
