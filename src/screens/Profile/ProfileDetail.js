@@ -3,7 +3,8 @@ import React from "react";
 import { ImageBackground, View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
-
+import Animated from "react-native-reanimated";
+import BottomSheet from "reanimated-bottom-sheet";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
@@ -17,22 +18,19 @@ const ProfileDetail = () => {
           <TouchableOpacity onPress={() => {}}>
             <View
               style={{
-                width: 100,
                 height: 100,
+                width: 100,
                 borderRadius: 15,
-                alignItems: "center",
-                justifyContent: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
               <ImageBackground
                 source={{
                   uri: "https://picsum.photos/200",
                 }}
-                style={{
-                  height: "100",
-                  width: "100",
-                }}
-                imageStyle={{ borderRadius: 15 }}
+                style={{height: 100, width: 100}}
+                imageStyle={{borderRadius: 15}}
               >
                 <View
                   style={{
@@ -77,7 +75,7 @@ const ProfileDetail = () => {
               md: "50%",
             }}
             InputLeftElement={
-              <Icon name="account" size={30} ml="2" color="muted.400" />
+              <Icon name="account" size={30} ml="2" color="#FF6347" />
             }
             placeholder="Name"
             h={{
@@ -92,7 +90,7 @@ const ProfileDetail = () => {
               md: "50%",
             }}
             InputLeftElement={
-              <Icon name="email" size={30} ml="2" color="muted.400" />
+              <Icon name="email" size={30} ml="2" color="#FF6347" />
             }
             placeholder="Email"
             h={{
@@ -107,7 +105,7 @@ const ProfileDetail = () => {
             }}
            
             InputLeftElement={
-              <Icon name="phone" size={30} ml="2" color="muted.400" />
+              <Icon name="phone" size={30} ml="2" color="#FF6347" />
             }
             placeholder="Telephone"
             h={{
